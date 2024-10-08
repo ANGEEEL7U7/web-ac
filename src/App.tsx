@@ -170,8 +170,8 @@ function App() {
               <DisclosureButton onClick={() => setTransition(!animation)} className="transition-all duration-300 group relative inline-flex items-center justify-center rounded-md p-2 text-white bg-black">
                 <span className="absolute -inset-0.5" />
                 <span className="sr-only">Open main menu</span>
-                <Bars3Icon aria-hidden="true" className={`${!animation ? 'block' : 'hidden'} h-6 w-6`} />
-                <XMarkIcon aria-hidden="true" className={`${animation ? 'block' : 'hidden'} h-6 w-6 `} />
+                <Bars3Icon aria-hidden="true" className={`${animation ? 'block' : 'hidden'} h-6 w-6`} />
+                <XMarkIcon aria-hidden="true" className={`${!animation ? 'block' : 'hidden'} h-6 w-6 `} />
               </DisclosureButton>
             </div>
 
@@ -206,7 +206,7 @@ function App() {
           </div>
         </div>
 
-        <Transition show={animation}
+        <Transition show={!animation}
           enter=" transition-all duration-500 "
           enterFrom="opacity-0 max-h-0"
           enterTo="translate-y-0  opacity-100 max-h-80"
@@ -214,7 +214,7 @@ function App() {
           leaveFrom="translate-y-0 opacity-100 max-h-80"
           leaveTo="opacity-0 max-h-0">
           <DisclosurePanel>
-            <div className="space-y-1 px-2 pb-3 pt-5 sm:hidden">
+            <div className="space-y-1 px-2 pb-3 pt-5 md:hidden">
               {navigation.map((item) => (
                 <DisclosureButton
                   key={item.name}
