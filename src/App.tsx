@@ -75,8 +75,8 @@ const habilidades = {
       { title: 'Mysql', levels: [1] },
       { title: 'Postgres', levels: [1] },
       { title: 'MariaDb', levels: [1] },
-      { title: 'Nignx', levels: [0, 2] },
-      { title: 'Linux', levels: [0, 2] },
+      { title: 'Nignx', levels: [0, 1] },
+      { title: 'Linux', levels: [0, 1] },
     ]
   }
 }
