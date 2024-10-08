@@ -70,7 +70,7 @@ const habilidades = {
     title: 'Herramientas',
     list: [
       { title: 'Git', levels: [0, 1] },
-      { title: 'Bootstrap', levels: [2] },
+      { title: 'Bootstrap', levels: [1,2] },
       { title: 'Jquery', levels: [1] },
       { title: 'Mysql', levels: [1] },
       { title: 'Postgres', levels: [1] },
@@ -403,7 +403,7 @@ function App() {
                 <span onClick={() => window.open('https://w.app/sc9Af5')} className="transition-all duration-300 bg-gray-800 border border-gray-700 text-gray-500 py-2 px-5 hover:text-white hover:border-gray-500 hover:bg-gray-700 rounded-full">Whatsapp</span>
               </div>
               <div className='flex justify-start cursor-pointer'>
-                <span onClick={() => window.open('mailto:angelc.desarrollo@gmail.com')} className="transition-all duration-300 bg-gray-800 border border-gray-700 text-gray-500 py-2 px-5 hover:text-white hover:border-gray-500 hover:bg-gray-700 rounded-full">Correo</span>
+                <span onClick={() => window.location.href = 'mailto:angelc.desarrollo@gmail.com'} className="transition-all duration-300 bg-gray-800 border border-gray-700 text-gray-500 py-2 px-5 hover:text-white hover:border-gray-500 hover:bg-gray-700 rounded-full">Correo</span>
               </div>
               <div className='flex justify-start cursor-pointer'>
                 <span onClick={() => window.open(cv)} className="transition-all duration-300 bg-gray-800 border border-gray-700 text-gray-500 py-2 px-5 hover:text-white hover:border-gray-500 hover:bg-gray-700 rounded-full">Curriculum</span>
