@@ -400,7 +400,7 @@ function App() {
                 <span onClick={() => window.open('https://www.linkedin.com/in/angel-yuc/')} className="transition-all duration-300 bg-gray-800 border border-gray-700 text-gray-500 py-2 px-5 hover:text-white hover:border-gray-500 hover:bg-gray-700 rounded-full">Linkedin</span>
               </div>
               <div className='flex justify-start cursor-pointer'>
-                <span onClick={() => window.open('https://w.app/sc9Af5')} className="transition-all duration-300 bg-gray-800 border border-gray-700 text-gray-500 py-2 px-5 hover:text-white hover:border-gray-500 hover:bg-gray-700 rounded-full">Whatsapp</span>
+                <span onClick={() => window.open('https://api.whatsapp.com/send/?phone=+529993689214&text=Hola+%C3%A1ngel%2C+me+gustar%C3%ADa+platicar+un+poco+m%C3%A1s&type=phone_number&app_absent=0')} className="transition-all duration-300 bg-gray-800 border border-gray-700 text-gray-500 py-2 px-5 hover:text-white hover:border-gray-500 hover:bg-gray-700 rounded-full">Whatsapp</span>
               </div>
               <div className='flex justify-start cursor-pointer'>
                 <span onClick={() => window.location.href = 'mailto:angelc.desarrollo@gmail.com'} className="transition-all duration-300 bg-gray-800 border border-gray-700 text-gray-500 py-2 px-5 hover:text-white hover:border-gray-500 hover:bg-gray-700 rounded-full">Correo</span>
