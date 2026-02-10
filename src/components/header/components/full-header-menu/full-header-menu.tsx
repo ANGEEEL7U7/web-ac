@@ -7,7 +7,9 @@ const FullHeaderMenu = () => {
 
     return (
         <div className="hidden md:flex justify-between items-center">
-            <span className="grow">Algo</span>
+            <span className="grow flex items-center gap-2 text-lg font-space font-bold italic">
+                <span>Angel</span>
+            </span>
             <div className="flex gap-3">
                 <button className="button-outline">Experiencia</button>
                 <button className="button-outline">Habilidades</button>

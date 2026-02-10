@@ -1,8 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *,[data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where(.dark, .dark *, [data-theme=dark], [data-theme=dark] *));
 
 @theme {
+  /*colors*/
+
   /* common*/
   --color-primary: #495d92;
   --color-secondary: #585e71;
@@ -46,8 +74,16 @@
 
   /*outline*/
   --color-outline-variant: #c5c6d0;
+
+  /*colors*/
+
+  /*fonts*/
+  --font-space: "Space Mono", monospace;
+  /*fonts*/
 }
+
 @layer theme {
+
   .dark,
   [data-theme="dark"] {
     /* common*/
@@ -100,21 +136,17 @@
 /*style button*/
 @layer components {
   .button-icon {
-    @apply inline-flex h-10 w-10 items-center justify-center p-1 rounded-full
-    transition-all hover:bg-on-primary-container/25 cursor-pointer select-none;
+    @apply inline-flex h-10 w-10 items-center justify-center p-1 rounded-full transition-all hover:bg-on-primary-container/25 cursor-pointer select-none;
   }
 
   .button-outline {
-    @apply cursor-pointer select-none inline-flex items-center justify-center 
-    border border-primary/50 px-[1em] rounded-full  
-    transition-all
-    hover:bg-on-primary-container/10
-    active:bg-primary/50;
+    @apply cursor-pointer select-none inline-flex items-center justify-center border border-primary/50 px-[1em] rounded-full transition-all hover:bg-on-primary-container/10 active:bg-primary/50;
   }
 }
+
 @layer theme {
-    * {
-      scrollbar-color: var(--color-inverse-surface) transparent;
-      
-    }
+  * {
+    scrollbar-color: var(--color-inverse-surface) transparent;
+
+  }
 }
