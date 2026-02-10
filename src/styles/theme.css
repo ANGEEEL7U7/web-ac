@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *,[data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  /* common*/
+  --color-primary: #495d92;
+  --color-secondary: #585e71;
+  --color-tertiary: #735471;
+  --color-error: #ba1a1a;
+
+  /*container*/
+  --color-primary-container: #dae2ff;
+  --color-secondary-container: #dce2f9;
+  --color-tertiary-container: #fed7f9;
+  --color-error-container: #ffdad6;
+
+  /*on common container*/
+  --color-on-primary-container: #304578;
+  --color-on-secondary-container: #304578;
+  --color-on-tertiary-container: #304578;
+  --color-on-error-container: #93000a;
+
+  /*custom*/
+  --color-scrim: #000000;
+  --color-shadow: #000000;
+  --color-body: #faf8ff;
+
+  /*surface*/
+  --color-surface-dim: #dad9e0;
+  --color-surface: #faf8ff;
+  --color-surface-bright: #faf8ff;
+  --color-inverse-surface: #2f3036;
+
+  /*surface container*/
+  --color-surf-container-highest: #e2e2e9;
+  --color-surf-container-hight: #e8e7ef;
+  --color-surf-container: #eeedf4;
+  --color-surf-container-low: #f4f3fa;
+  --color-surf-container-lowest: #ffffff;
+
+  /*on surface*/
+  --color-on-surface: #1a1b21;
+  --color-on-surface-var: #45464f;
+  --color-on-surface-outline: #757780;
+
+  /*outline*/
+  --color-outline-variant: #c5c6d0;
+}
+@layer theme {
+  .dark,
+  [data-theme="dark"] {
+    /* common*/
+    --color-primary: #b2c5ff;
+    --color-secondary: #c0c6dd;
+    --color-tertiary: #e1bbdd;
+    --color-error: #ffb4ab;
+
+    /*container*/
+    --color-primary-container: #304578;
+    --color-secondary-container: #404659;
+    --color-tertiary-container: #5a3d59;
+    --color-error-container: #93000a;
+
+    /*on common container*/
+    --color-on-primary-container: #dae2ff;
+    --color-on-secondary-container: #dce2f9;
+    --color-on-tertiary-container: #fed7f9;
+    --color-on-error-container: #ffdad6;
+
+    /*custom*/
+    --color-scrim: #000000;
+    --color-shadow: #000000;
+    --color-body: #121318;
+
+    /*surface*/
+    --color-surface-dim: #121318;
+    --color-surface: #121318;
+    --color-surface-bright: #121318;
+    --color-inverse-surface: #e2e2e9;
+
+    /*surface container*/
+    --color-surf-container-highest: #33343a;
+    --color-surf-container-hight: #282a2f;
+    --color-surf-container: #1e1f25;
+    --color-surf-container-low: #1a1b21;
+    --color-surf-container-lowest: #0d0e13;
+
+    /*on surface*/
+    --color-on-surface: #e2e2e9;
+    --color-on-surface-var: #c5c6d0;
+    --color-on-surface-outline: #8f909a;
+
+    /*outline*/
+    --color-outline-variant: #45464f;
+    color: white;
+  }
+}
+
+/*style button*/
+@layer components {
+  .button-icon {
+    @apply inline-flex h-10 w-10 items-center justify-center p-1 rounded-full
+    transition-all hover:bg-on-primary-container/25 cursor-pointer select-none;
+  }
+
+  .button-outline {
+    @apply cursor-pointer select-none inline-flex items-center justify-center 
+    border border-primary/50 px-[1em] rounded-full  
+    transition-all
+    hover:bg-on-primary-container/10
+    active:bg-primary/50;
+  }
+}
+@layer theme {
+    * {
+      scrollbar-color: var(--color-inverse-surface) transparent;
+      
+    }
+}
