@@ -5,7 +5,7 @@ const SmallHeaderMenu = () => {
     const [menuStatus, toggle] = ActionMenu();
 
     return (
-        <div className='flex flex-col'>
+        <div className='flex md:hidden flex-col'>
             <div className="flex  h-full w-full">
                 <button className='button-icon transition-all' onClick={toggle}>
                     <span
