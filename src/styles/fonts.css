@@ -1,0 +1,5 @@
+/*space mono*/
+@theme {
+  --font-space: "Space Mono", monospace;
+  --font-jet-brains: "JetBrains Mono", monospace;
+}

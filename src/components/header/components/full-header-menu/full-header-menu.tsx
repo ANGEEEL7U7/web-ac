@@ -1,13 +1,13 @@
 import WbSunnyTwoToneIcon from '@mui/icons-material/WbSunnyTwoTone';
 import DarkModeTwoToneIcon from '@mui/icons-material/DarkModeTwoTone';
-import { DarkMode } from '../../../../shared/hooks/dark-mode.hook';
+import { DarkMode } from '@shared/hooks/dark-mode.hook';
 
 const FullHeaderMenu = () => {
     const { isDark, setDark } = DarkMode();
 
     return (
         <div className="hidden md:flex justify-between items-center">
-            <span className="grow flex items-center gap-2 text-lg font-space font-bold italic">
+            <span className="grow flex items-center gap-2 text-lg font-space italic">
                 <span>Angel</span>
             </span>
             <div className="flex gap-3">
