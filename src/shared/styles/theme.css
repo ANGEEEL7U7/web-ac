@@ -18,6 +18,10 @@
   --color-primary-900: #3a3e75;
   --color-primary-950: #1d1e3a;
   /*primary color*/
+
+  /*fonts*/
+  --font-space: "Space Mono", monospace;
+  --font-jet-brains: "JetBrains Mono", monospace;
 }
 
 @layer theme {
@@ -34,4 +38,3 @@
   }
 }
 @import "./components.css";
-@import "./fonts.css";
