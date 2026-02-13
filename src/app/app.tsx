@@ -1,12 +1,9 @@
 import Content from "@features/content/content";
-import Footer from "@features/footer/footer";
-import Header from "@features/header/header";
+import MainLayout from "@shared/components/layout/main-layout/main-layout";
 import '@shared/styles/theme.css'
 
-const App = () => <>
-    <Header />
+const App = () => <MainLayout>
     <Content />
-    <Footer />
-</>
+</MainLayout>
 
 export default App;
