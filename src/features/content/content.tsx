@@ -5,44 +5,45 @@ const Content = () => {
     return <main className='overflow-hidden'>
         <article className='w-full h-svh'>
             <ShaderGradientCanvas pointerEvents='none' pixelDensity={1}
-                fov={45}><ShaderGradient
+                fov={45}>
+                <ShaderGradient
                     animate="on"
-                    
-                    brightness={0.7}
-                    cAzimuthAngle={270}
-                    cDistance={0.5}
-                    cPolarAngle={180}
-                    cameraZoom={20}
+                    control='props'
+                    brightness={1.2}
+                    cAzimuthAngle={180}
+                    cDistance={3.6}
+                    cPolarAngle={90}
+                    cameraZoom={1}
                     color1='#ABC0FA'
                     color2='#4D5184'
                     color3='#8da0ce'
                     envPreset="city"
                     grain="on"
-                    lightType="env"
-                    positionX={-0.1}
+                    lightType="3d"
+                    positionX={-1.4}
                     positionY={0}
                     positionZ={0}
                     range="disabled"
                     rangeEnd={40}
                     rangeStart={0}
-                    reflection={0.4}
+                    reflection={0.1}
                     rotationX={0}
-                    rotationY={130}
-                    rotationZ={70}
+                    rotationY={10}
+                    rotationZ={50}
                     shader="defaults"
-                    type="sphere"
-                    uAmplitude={3.2}
-                    uDensity={0.8}
+                    type="plane"
+                    uAmplitude={1}
+                    uDensity={1.3}
                     uFrequency={5.5}
-                    uSpeed={0.2}
-                    uStrength={0.3}
+                    uSpeed={0.4}
+                    uStrength={4}
                     uTime={0}
                     wireframe={false}
                 />
             </ShaderGradientCanvas>
             <div className='absolute top-0 px-10 h-full w-full items-center flex text-white'>
                 <div className='flex flex-col items-start'>
-                    <h1 className='mb-4 text-5xl font-bold font-jet-brains md:w-1/2'>Angel Abraham C. G.</h1>
+                    <h1 className='mb-4 text-5xl font-bold font-jet-brains md:w-1/2'>...... C. G.</h1>
                     <p className='md:w-1/2 font-space'>Full stack con experiencia en la creación de sistemas web y móviles, Apasionado por la automaticacion de procesos con experiencia en la implementación de soluciones tecnológicas que han mejorado la eficiencia en proyectos anteriores y actuales.</p>
                 </div>
             </div>

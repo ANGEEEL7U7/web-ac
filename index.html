@@ -57,7 +57,105 @@
     />
   </head>
 
-  <body class="bg-body">
+  <body>
+    <div id="global-loader" class="jetbrains-mono">
+      <style>
+        .jetbrains-mono {
+          font-family: "JetBrains Mono", monospace;
+          font-optical-sizing: auto;
+          font-weight: 500;
+          font-style: normal;
+        }
+        #global-loader {
+          padding: 0 10px;
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          background-color: white;
+          color: black;
+          z-index: 1000;
+          min-height: 100svh;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+        }
+        html.dd #global-loader {
+          background-color: #141823;
+          color: white;
+        }
+
+        body {
+          overflow: hidden;
+        }
+        .spinner {
+          width: 70.4px;
+          height: 70.4px;
+          animation: spinner-y0fdc1 2.4s infinite ease;
+          transform-style: preserve-3d;
+        }
+
+        .spinner > div {
+          background-color: rgba(71, 75, 255, 0.2);
+          height: 100%;
+          position: absolute;
+          width: 100%;
+          border: 3.5px solid #3a57f0;
+        }
+
+        .spinner div:nth-of-type(1) {
+          transform: translateZ(-35.2px) rotateY(180deg);
+        }
+
+        .spinner div:nth-of-type(2) {
+          transform: rotateY(-270deg) translateX(50%);
+          transform-origin: top right;
+        }
+
+        .spinner div:nth-of-type(3) {
+          transform: rotateY(270deg) translateX(-50%);
+          transform-origin: center left;
+        }
+
+        .spinner div:nth-of-type(4) {
+          transform: rotateX(90deg) translateY(-50%);
+          transform-origin: top center;
+        }
+
+        .spinner div:nth-of-type(5) {
+          transform: rotateX(-90deg) translateY(50%);
+          transform-origin: bottom center;
+        }
+
+        .spinner div:nth-of-type(6) {
+          transform: translateZ(35.2px);
+        }
+
+        @keyframes spinner-y0fdc1 {
+          0% {
+            transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+          }
+
+          50% {
+            transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+          }
+
+          100% {
+            transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+          }
+        }
+      </style>
+      <div style="height: 125px">
+        <div class="spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <h1 style="font-size: 1.25em;text-align: center;">Gracias por tu paciencia...</h1>
+    </div>
     <div id="application"></div>
     <script type="module" src="./src/app/main.tsx"></script>
   </body>

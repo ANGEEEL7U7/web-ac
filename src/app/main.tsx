@@ -8,6 +8,10 @@ if (!container) throw new Error('Not found container');
 
 createRoot(container).render(<StrictMode>
     <ThemeProvider>
-        <App/>
+        <App />
     </ThemeProvider>
 </StrictMode>)
+
+window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('global-loader')?.remove(),2000);
+});

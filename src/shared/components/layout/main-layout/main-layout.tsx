@@ -4,7 +4,7 @@ import Footer from "./components/footer/footer";
 
 const MainLayout = (
     { children }: { children: ReactNode }
-) => <div className="min-h-screen">
+) => <div className="min-h-screen bg-body">
         <Header />
         {children}
         <Footer />
