@@ -5,3 +5,10 @@
 .button-outline {
   @apply cursor-pointer select-none inline-flex items-center justify-center border /*border-primary/50*/ px-[1em] rounded-full transition-all /*hover:bg-on-primary-container/10 active:bg-primary/50*/;
 }
+.button {
+  @apply inline-flex cursor-pointer items-center select-none border dark:border-neutral-600 border-neutral-400 bg-body text-black 
+  dark:text-white px-2 py-[0.5em] rounded
+}
+.button.icon {
+  @apply rounded-full! p-2.5! hover:bg-neutral-800 transition-all duration-300
+}

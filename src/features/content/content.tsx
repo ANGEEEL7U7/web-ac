@@ -1,11 +1,12 @@
 import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
-
+import MouseTwoToneIcon from '@mui/icons-material/MouseTwoTone';
+import SwipeUpTwoToneIcon from '@mui/icons-material/SwipeUpTwoTone';
+import { IS_MOBILE } from '@shared/utils/conts';
 
 const Content = () => {
     return <main className='overflow-hidden'>
         <article className='w-full h-svh'>
-            <ShaderGradientCanvas pointerEvents='none' pixelDensity={1}
-                fov={45}>
+            <ShaderGradientCanvas pointerEvents='none' pixelDensity={1} fov={45}>
                 <ShaderGradient
                     animate="on"
                     control='props'
@@ -41,10 +42,18 @@ const Content = () => {
                     wireframe={false}
                 />
             </ShaderGradientCanvas>
-            <div className='absolute top-0 px-10 h-full w-full items-center flex text-white'>
-                <div className='flex flex-col items-start'>
-                    <h1 className='mb-4 text-5xl font-bold font-jet-brains md:w-1/2'>...... C. G.</h1>
-                    <p className='md:w-1/2 font-space'>Full stack con experiencia en la creación de sistemas web y móviles, Apasionado por la automaticacion de procesos con experiencia en la implementación de soluciones tecnológicas que han mejorado la eficiencia en proyectos anteriores y actuales.</p>
+            <div className='absolute top-0 flex flex-col justify-center h-full pt-20 pb-10 px-10 w-full text-white'>
+                <div className='flex flex-col items-start mt-auto'>
+                    <h1 className='text-5xl font-bold font-jet-brains md:w-1/2 mb-5'>Title page.</h1>
+                    <p className='md:w-1/2 font-space'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas imperdiet eleifend purus, non euismod nisl consequat ac. Cras a dui quis nisl consequat ullamcorper. Sed hendrerit eros nec pharetra congue. Vestibulum fermentum tortor quis leo tempus, ac interdum quam tincidunt. Nam scelerisque dolor non magna rhoncus, eget dapibus arcu luctus. Nullam sodales ante sit amet velit ullamcorper, et ornare est egestas. In aliquam libero sem, at aliquam urna fermentum eu.</p>
+                </div>
+                <div className='flex mt-auto items-center'>
+                <button className="px-6 py-2 rounded-full bg-blue-500 text-white font-semibold 
+               transition-all duration-150 ease-in-out
+               active:bg-blue-700 active:scale-95 active:ring-2 active:ring-blue-300">
+  Click Me
+</button>
+                    <span className='ml-2'>{IS_MOBILE ? 'Desliza' : 'Scroll'} para ver más información.</span>
                 </div>
             </div>
         </article>
@@ -52,6 +61,3 @@ const Content = () => {
 }
 
 export default Content;
-/*
-<ShaderGradient control='query' urlString='https://shadergradient.co/customize?animate=on&axesHelper=off&brightness=0.8&cAzimuthAngle=270&cDistance=0.5&cPolarAngle=180&cameraZoom=15.1&color1=%23ABC0FA&color2=%234D5184&color3=%238da0ce&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=45&frameRate=10&gizmoHelper=hide&grain=on&lightType=env&pixelDensity=1&positionX=-0.1&positionY=0&positionZ=0&range=disabled&rangeEnd=40&rangeStart=0&reflection=0.4&rotationX=0&rotationY=130&rotationZ=70&shader=defaults&type=sphere&uAmplitude=3.2&uDensity=0.8&uFrequency=5.5&uSpeed=0.3&uStrength=0.3&uTime=0&wireframe=false' />
-*/

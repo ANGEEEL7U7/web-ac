@@ -1,0 +1,1 @@
+export const IS_MOBILE: boolean = window.matchMedia('(pointer: coarse)').matches

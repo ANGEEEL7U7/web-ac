@@ -13,5 +13,10 @@ createRoot(container).render(<StrictMode>
 </StrictMode>)
 
 window.addEventListener('load', () => {
-    setTimeout(() => document.getElementById('global-loader')?.remove(),2000);
+    const load = document.getElementById('global-loader');
+    if(!load) return;
+
+    load.style.opacity = '0';
+    load.style.transition = 'opacity 1.5s ease'
+    setTimeout(() => document.getElementById('global-loader')?.remove(),1600);
 });
