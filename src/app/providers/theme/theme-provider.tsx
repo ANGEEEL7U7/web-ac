@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { ThemeMode } from "./theme.types";
 import { ThemeContext } from "./theme.context";
-
+import { IS_DARK } from "@shared/utils/const";
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<ThemeMode>("light");
+  const [theme, setTheme] = useState<ThemeMode>(IS_DARK ? 'dark' : 'light');
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');

@@ -20,11 +20,11 @@ export default function Header() {
                     <span>...</span>
                 </span>
                 <div className="flex gap-3">
-                    <button className="button-outline">......</button>
-                    <button className="button-outline">......</button>
-                    <button className="button-outline">......</button>
-                    <button className="button-outline">......</button>
-                    <button onClick={changeTheme} className="cursor-pointer button-icon">
+                    <button className="button-outline">opcion 1</button>
+                    <button className="button-outline">opcion 2</button>
+                    <button className="button-outline">opcion 3</button>
+                    <button className="button-outline">opcion 4</button>
+                    <button onClick={changeTheme} className="cursor-pointer button icon">
                         {theme === 'dark' ? <WbSunnyTwoToneIcon /> : <DarkModeTwoToneIcon />}
                     </button>
                 </div>

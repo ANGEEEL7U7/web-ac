@@ -1,14 +1,19 @@
-.button-icon {
-  @apply inline-flex h-10 w-10 items-center justify-center p-1 rounded-full transition-all /*hover:bg-on-primary-container/25*/ cursor-pointer select-none;
-}
 
 .button-outline {
-  @apply cursor-pointer select-none inline-flex items-center justify-center border /*border-primary/50*/ px-[1em] rounded-full transition-all /*hover:bg-on-primary-container/10 active:bg-primary/50*/;
+  @apply cursor-pointer select-none inline-flex items-center 
+  justify-center border px-[1em] rounded-full transition-all
+  hover:bg-neutral-200/20
+  active:bg-neutral-200/40
 }
 .button {
   @apply inline-flex cursor-pointer items-center select-none border dark:border-neutral-600 border-neutral-400 bg-body text-black 
   dark:text-white px-2 py-[0.5em] rounded
 }
 .button.icon {
-  @apply rounded-full! p-2.5! hover:bg-neutral-800 transition-all duration-300
+  @apply rounded-full! p-2.5! bg-transparent border-0
+  hover:bg-white/25
+  dark:hover:bg-neutral-800/30!
+  transition-all duration-300
+  active:bg-neutral-200/50
+  dark:active:bg-neutral-800/75!;
 }

@@ -1,11 +1,9 @@
 import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
-import MouseTwoToneIcon from '@mui/icons-material/MouseTwoTone';
-import SwipeUpTwoToneIcon from '@mui/icons-material/SwipeUpTwoTone';
-import { IS_MOBILE } from '@shared/utils/conts';
+import { IS_MOBILE } from '@shared/utils/const';
 
 const Content = () => {
-    return <main className='overflow-hidden'>
-        <article className='w-full h-svh'>
+    return <main>
+        <article className='w-full h-[50em] sm:h-svh'>
             <ShaderGradientCanvas pointerEvents='none' pixelDensity={1} fov={45}>
                 <ShaderGradient
                     animate="on"
@@ -43,11 +41,11 @@ const Content = () => {
                 />
             </ShaderGradientCanvas>
             <div className='absolute top-0 flex flex-col justify-center h-full pt-20 pb-10 px-10 w-full text-white'>
-                <div className='flex flex-col items-start mt-auto'>
+                <div className='flex flex-col items-start sm:mt-auto'>
                     <h1 className='text-5xl font-bold font-jet-brains md:w-1/2 mb-5'>Title page.</h1>
                     <p className='md:w-1/2 font-space'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas imperdiet eleifend purus, non euismod nisl consequat ac. Cras a dui quis nisl consequat ullamcorper. Sed hendrerit eros nec pharetra congue. Vestibulum fermentum tortor quis leo tempus, ac interdum quam tincidunt. Nam scelerisque dolor non magna rhoncus, eget dapibus arcu luctus. Nullam sodales ante sit amet velit ullamcorper, et ornare est egestas. In aliquam libero sem, at aliquam urna fermentum eu.</p>
                 </div>
-                <div className='flex mt-auto items-center'>
+                <div className='flex sm:mt-auto items-center'>
                 <button className="px-6 py-2 rounded-full bg-blue-500 text-white font-semibold 
                transition-all duration-150 ease-in-out
                active:bg-blue-700 active:scale-95 active:ring-2 active:ring-blue-300">

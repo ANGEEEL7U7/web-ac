@@ -14,9 +14,11 @@ createRoot(container).render(<StrictMode>
 
 window.addEventListener('load', () => {
     const load = document.getElementById('global-loader');
-    if(!load) return;
-
+    if (!load) return;
     load.style.opacity = '0';
-    load.style.transition = 'opacity 1.5s ease'
-    setTimeout(() => document.getElementById('global-loader')?.remove(),1600);
+    load.style.transition = 'opacity 2s ease'
+    load.addEventListener('transitionend',() => {
+        load.remove();
+        document.body.style.removeProperty('overflow');
+    })
 });

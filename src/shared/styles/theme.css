@@ -32,9 +32,4 @@
   }
 }
 
-@layer theme {
-  * {
-    scrollbar-color: var(--color-inverse-surface) transparent;
-  }
-}
 @import "./components.css";
