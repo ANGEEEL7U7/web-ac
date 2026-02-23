@@ -1,35 +1,42 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <!--Title page-->
+    <title>Angel cab</title>
+    <!--Title page-->
+
+    <!--Links-->
+
+    <!--Css-->
     <link rel="stylesheet" href="/src/shared/styles/loader.css" />
-    <!--<link
-      rel="icon"
-      type="image/svg+xml"
-      href="/src/assets/icons-favicon.svg"
-    />--->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Css-->
 
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <!--Fonts-->
 
-    <!-- Primary Meta Tags -->
-    <title>Angel cab</title>
+    <!--Links-->
+
+    <!--Meta tags-->
+    
+    <!--Pagina-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Pagina-->
+
+    <!--Primary meta-->
     <meta name="title" content="Angel cab" />
     <meta
       name="description"
-      content="Full stack con experiencia en la creación de sistemas web y móviles, Apasionado por la automaticacion de procesos con experiencia en la implementación de soluciones tecnológicas que han mejorado la eficiencia en proyectos anteriores y actuales."
-    />
+      content="..."/>
+    <!--Primary meta-->
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -37,12 +44,13 @@
     <meta property="og:title" content="Angel cab" />
     <meta
       property="og:description"
-      content="Full stack con experiencia en la creación de sistemas web y móviles, Apasionado por la automaticacion de procesos con experiencia en la implementación de soluciones tecnológicas que han mejorado la eficiencia en proyectos anteriores y actuales."
+      content="..."
     />
     <meta
       property="og:image"
-      content="https://i.ibb.co/F4SfwD49/Captura-desde-2024-10-07-22-37-07.png"
+      content="{agregar nueva imagen}"
     />
+    <!-- Open Graph / Facebook -->
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -50,21 +58,35 @@
     <meta property="twitter:title" content="Angel cab" />
     <meta
       property="twitter:description"
-      content="Full stack con experiencia en la creación de sistemas web y móviles, Apasionado por la automaticacion de procesos con experiencia en la implementación de soluciones tecnológicas que han mejorado la eficiencia en proyectos anteriores y actuales."
-    />
+      content="..."/>
     <meta
       property="twitter:image"
-      content="https://i.ibb.co/F4SfwD49/Captura-desde-2024-10-07-22-37-07.png"
-    />
+      content="{agregar nueva imagen}"/>
+    <!-- Twitter -->
+
+    <!--Meta tags-->
     
   </head>
 
   <body>
-    <!--pantalla de carga-->
-    <div id="global-loader"><style>body{overflow: hidden;}</style><div><div class="spinner"><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>
-    <!--pantalla de carga-->
-
+    
     <!--aplidacion-->
+    <div id="global-loader">
+      <!--pantalla de carga-->
+      <script>window.addEventListener('load',() => {
+          const load = document.getElementById('global-loader');
+            if (!load) return;
+            load.style.opacity = 0;
+            load.style.transition = 'opacity 3s ease'
+            load.addEventListener('transitionend',() => {
+                load.remove();
+                document.body.style.removeProperty('overflow');
+            })
+          })</script>
+      <style>body{overflow: hidden;}</style><div><div class="spinner"><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+      <!--pantalla de carga-->
+    </div>
+    
     <div id="application"></div>
     <script type="module" src="./src/app/main.tsx"></script>
     <!--aplicacion-->

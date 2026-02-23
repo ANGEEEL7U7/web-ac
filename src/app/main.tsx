@@ -6,19 +6,8 @@ import App from './app';
 const container = document.getElementById('application');
 if (!container) throw new Error('Not found container');
 
-createRoot(container).render(<StrictMode>
-    <ThemeProvider>
-        <App />
-    </ThemeProvider>
-</StrictMode>)
-
-window.addEventListener('load', () => {
-    const load = document.getElementById('global-loader');
-    if (!load) return;
-    load.style.opacity = '0';
-    load.style.transition = 'opacity 2s ease'
-    load.addEventListener('transitionend',() => {
-        load.remove();
-        document.body.style.removeProperty('overflow');
-    })
-});
+createRoot(container).render(
+<StrictMode>
+    <ThemeProvider><App /></ThemeProvider>
+</StrictMode>
+)
