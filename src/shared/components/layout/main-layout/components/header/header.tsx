@@ -2,28 +2,30 @@ import { useTheme } from "@shared/hooks/theme";
 import { ScrollBehavior } from "./header.hook";
 import WbSunnyTwoToneIcon from '@mui/icons-material/WbSunnyTwoTone';
 import DarkModeTwoToneIcon from '@mui/icons-material/DarkModeTwoTone';
-
+import CoffeeRoundedIcon from '@mui/icons-material/CoffeeRounded';
+import './style-header.css'
 
 export default function Header() {
     const [scrollActivo, position] = ScrollBehavior();
     const { theme, changeTheme } = useTheme();
 
     return (
-        <nav
-            className={
-                `${scrollActivo ? 'dark:bg-neutral-900 border dark:border-neutral-600 shadow-lg border-neutral-400 bg-body' : 'bg-transparent backdrop-blur-xs border-0'} 
-            ${position > 0 ? ' top-2 rounded-2xl left-3 right-3' : 'top-0 left-0 right-0'}
-                fixed px-4 py-5 transition-all z-10`
-            }>
+        <nav className="header" data-scrolling={scrollActivo && position > 0}>
             <div className="hidden md:flex justify-between items-center">
                 <span className="grow flex items-center gap-2 text-lg font-space italic">
                     <span>...</span>
                 </span>
                 <div className="flex gap-3">
-                    <button className="button-outline">opcion 1</button>
-                    <button className="button-outline">opcion 2</button>
-                    <button className="button-outline">opcion 3</button>
-                    <button className="button-outline">opcion 4</button>
+                    <div className="flex gap-4 bg-body px-4 py-3 rounded-2xl border border-gray-500">
+                        <button className="flex cursor-pointer transition-all duration-300 gap-2">
+                            <CoffeeRoundedIcon className="translate-x-10 hover:translate-x-0 opacity-0 hover:opacity-100" />
+                            <span>Presentación</span>
+                        </button>
+                        <button className="cursor-pointer hover:border-b transition-all duration-300">Contenido Ed</button>
+                        <button className="cursor-pointer hover:border-b transition-all duration-300">Contenido Ch</button>
+                        <button className="cursor-pointer hover:border-b transition-all duration-300">Contenido E</button>
+
+                    </div>
                     <button onClick={changeTheme} className="cursor-pointer button icon">
                         {theme === 'dark' ? <WbSunnyTwoToneIcon /> : <DarkModeTwoToneIcon />}
                     </button>
