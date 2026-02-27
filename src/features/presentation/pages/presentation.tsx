@@ -16,7 +16,7 @@ const Presentation = () => <article className='w-full h-[50em] sm:h-svh'>
             color3='#8da0ce'
             envPreset="city"
             grain="on"
-            lightType="3d"
+            lightType="env"
             positionX={-1.4}
             positionY={0}
             positionZ={0}
@@ -28,7 +28,7 @@ const Presentation = () => <article className='w-full h-[50em] sm:h-svh'>
             rotationY={10}
             rotationZ={50}
             shader="defaults"
-            type="plane"
+            type="sphere"
             uAmplitude={1}
             uDensity={1.3}
             uFrequency={5.5}
