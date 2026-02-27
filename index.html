@@ -1,104 +1,125 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!--Title page-->
-    <title>Angel cab</title>
-    <!--Title page-->
 
-    <!--Links-->
-    <link rel="shortcut icon" href="/src/assets/images/favicon.svg" type="image/x-icon">
+<head>
+  <!--Title page-->
+  <title>Angel cab</title>
+  <!--Title page-->
 
-    <!--Css-->
-    <link rel="stylesheet" href="/src/shared/styles/loader.css" />
-    <!--Css-->
+  <!--Links-->
+  <!--Icono de la pagina-->
+  <link rel="shortcut icon" href="/src/assets/images/favicon.svg" type="image/x-icon">
+  <!--Icono de la pagina-->
 
-    <!--Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <!--Fonts-->
+  <!--Css-->
+  <link rel="stylesheet" href="/src/shared/styles/loader.css" />
+  <!--Css-->
 
-    <!--Links-->
+  <!--Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+  <!--Fonts-->
 
-    <!--Meta tags-->
+  <!--Links-->
 
-    <!--Pagina-->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Pagina-->
+  <!--Meta tags-->
 
-    <!--Primary meta-->
-    <meta name="title" content="Angel cab" />
-    <meta name="description" content="..." />
-    <!--Primary meta-->
+  <!--Pagina-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Pagina-->
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://web-ac.vercel.app/" />
-    <meta property="og:title" content="Angel cab" />
-    <meta property="og:description" content="..." />
-    <meta property="og:image" content="{agregar nueva imagen}" />
-    <!-- Open Graph / Facebook -->
+  <!--Primary meta-->
+  <meta name="title" content="Angel cab" />
+  <meta name="description" content="..." />
+  <!--Primary meta-->
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://web-ac.vercel.app/" />
-    <meta property="twitter:title" content="Angel cab" />
-    <meta property="twitter:description" content="..." />
-    <meta property="twitter:image" content="{agregar nueva imagen}" />
-    <!-- Twitter -->
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://web-ac.vercel.app/" />
+  <meta property="og:title" content="Angel cab" />
+  <meta property="og:description" content="..." />
+  <meta property="og:image" content="{agregar nueva imagen}" />
+  <!-- Open Graph / Facebook -->
 
-    <!--Meta tags-->
-    <script>
-      
-    </script>
-  </head>
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://web-ac.vercel.app/" />
+  <meta property="twitter:title" content="Angel cab" />
+  <meta property="twitter:description" content="..." />
+  <meta property="twitter:image" content="{agregar nueva imagen}" />
+  <!-- Twitter -->
+  
+  <!--Meta tags-->
 
-  <body>
-    <!--aplicacion-->
+  <!--Scripts-->
+  <script data-loader="true">
+    (()=> document.documentElement.classList.toggle('dark',window.matchMedia("(pointer: coarse)").matches))();
+    (() => {
+      let counter = 0;
+      let load = !1;
+      const httpFetch = window.fetch;
 
-    <!--pantalla de carga-->
-    <div id="global-loader">
-      
-      <script>
-        window.addEventListener("load", () => {
-          const load = document.getElementById("global-loader");
-          if (!load) return;
-          load.style.opacity = 0;
-          load.style.transition = "opacity 3s ease";
-          load.addEventListener("transitionend", () => {
-            load.remove();
-            document.body.style.removeProperty("overflow");
-          });
+      const handLoad = () => {
+        const loader = document.getElementById('global-loader');
+        if(counter > 0 && !load && !loader) return;
+        setTimeout(() => {
+            loader.setAttribute('style','transition: opacity 1s ease; opacity:0');
+            loader.addEventListener('transitionend', () => {
+              loader.remove();
+              document.querySelectorAll('[data-loader="true"]').forEach(element => element.remove())
+            }, { once: true });
+          }, 2000)
+      }
+
+      window.fetch = function () {
+        counter++;
+        return httpFetch.apply(this,arguments).finally(() => {
+          counter--;
+          handLoad();
         });
-      </script>
-      <style>
-        body {
-          overflow: hidden;
-        }
-      </style>
-      <div>
-        <div class="spinner">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+      }
+
+      window.addEventListener('load', () => {
+        load = true;
+        handLoad();
+      })
+    })();
+  </script>
+  <!--Scripts-->
+</head>
+
+<body>
+  <!--aplicacion-->
+
+  
+  <div id="global-loader" data-loader="true"><!--pantalla de carga-->
+    <style>
+      body {
+        overflow: hidden;
+      }
+    </style>
+    <div>
+      <div class="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
-    <!--pantalla de carga-->
+  <!--pantalla de carga--></div>
+  
 
-    <div id="application"></div>
-    <script type="module" src="./src/app/main.tsx"></script>
-    <!--aplicacion-->
-  </body>
+  <div id="application"></div>
+  <script type="module" src="./src/app/main.tsx"></script>
+  <!--aplicacion-->
+</body>
+
 </html>
