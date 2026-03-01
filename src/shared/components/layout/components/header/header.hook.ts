@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 
-export const ScrollBehavior = (): [boolean, number] => {
+export const ScrollBehavior = (): [boolean] => {
   const [scrollActive, setScrollActive] = useState<boolean>(window.scrollY > 0);
-  const [position, setPosition] = useState<number>(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollActive(window.scrollY > 0);
-      setPosition(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -15,7 +13,7 @@ export const ScrollBehavior = (): [boolean, number] => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return [scrollActive, position];
+  return [scrollActive];
 };
 
 export const ActionMenu = (): [boolean, () => void] => {

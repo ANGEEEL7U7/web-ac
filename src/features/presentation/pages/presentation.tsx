@@ -1,57 +1,58 @@
 import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
+import MouseRoundedIcon from '@mui/icons-material/MouseRounded';
+import SwipeVerticalRoundedIcon from '@mui/icons-material/SwipeVerticalRounded';
 import { IS_MOBILE } from '@shared/utils/const';
+import '../styles/presentation.css'
 
-const Presentation = () => <article className='w-full h-[50em] sm:h-svh'>
-    <ShaderGradientCanvas pointerEvents='none' pixelDensity={1} fov={45}>
+const Presentation = () => <section className='w-full h-[50em] sm:h-svh'>
+    <ShaderGradientCanvas
+        pointerEvents='none'
+        pixelDensity={1}
+        fov={45} >
         <ShaderGradient
             animate="on"
-            control='props'
-            brightness={1.2}
-            cAzimuthAngle={180}
-            cDistance={3.6}
-            cPolarAngle={90}
-            cameraZoom={1}
-            color1='#ABC0FA'
-            color2='#4D5184'
-            color3='#8da0ce'
+            brightness={0.1}
+            cAzimuthAngle={0}
+            cDistance={0.5}
+            cPolarAngle={0}
+            cameraZoom={20}
+            color1="#ACC3F2"
+            color2="#8531A3"
+            color3="#3665C2"
             envPreset="city"
             grain="on"
+            grainBlending={1}
             lightType="env"
-            positionX={-1.4}
+            positionX={-0.1}
             positionY={0}
             positionZ={0}
             range="disabled"
             rangeEnd={40}
             rangeStart={0}
             reflection={0.1}
-            rotationX={0}
-            rotationY={10}
-            rotationZ={50}
-            shader="defaults"
+            rotationX={150}
+            rotationY={0}
+            rotationZ={0}
             type="sphere"
-            uAmplitude={1}
-            uDensity={1.3}
-            uFrequency={5.5}
-            uSpeed={0.4}
-            uStrength={4}
+            uAmplitude={8}
+            uDensity={1}
+            uFrequency={2}
+            uSpeed={0.07}
+            uStrength={0.5}
             uTime={0}
             wireframe={false}
         />
     </ShaderGradientCanvas>
-    <div className='absolute top-0 flex flex-col justify-center h-full pt-20 pb-10 px-10 w-full text-white'>
-        <div className='flex flex-col items-start sm:mt-auto'>
-            <h1 className='text-5xl font-bold font-jet-brains md:w-1/2 mb-5'>Title page.</h1>
-            <p className='md:w-1/2 font-space'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas imperdiet eleifend purus, non euismod nisl consequat ac. Cras a dui quis nisl consequat ullamcorper. Sed hendrerit eros nec pharetra congue. Vestibulum fermentum tortor quis leo tempus, ac interdum quam tincidunt. Nam scelerisque dolor non magna rhoncus, eget dapibus arcu luctus. Nullam sodales ante sit amet velit ullamcorper, et ornare est egestas. In aliquam libero sem, at aliquam urna fermentum eu.</p>
-        </div>
-        <div className='flex sm:mt-auto items-center'>
-            <button className="px-6 py-2 rounded-full bg-blue-500 text-white font-semibold 
-               transition-all duration-150 ease-in-out
-               active:bg-blue-700 active:scale-95 active:ring-2 active:ring-blue-300">
-                Click Me
-            </button>
-            <span className='ml-2'>{IS_MOBILE ? 'Desliza' : 'Scroll'} para ver más información.</span>
+    <div className='f_p_content_presentation'>
+        <h1 className='f_p_title'>Bienvenido </h1>
+        <span className='font-space'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae sapien commodo turpis facilisis pulvinar vitae a ex. In non urna faucibus, semper nisi a, viverra felis. Nulla eget lobortis dui. Etiam dapibus ultricies consectetur. Suspendisse sagittis sed diam id scelerisque. Sed maximus, augue eu dignissim feugiat, tortor tellus eleifend libero, ut sodales augue neque vitae elit. Suspendisse a dui augue. Sed ultricies ex maximus rutrum pulvinar. Aliquam non enim dictum, mollis dui nec, malesuada ligula. Vivamus non sodales libero, at gravida lorem. Quisque mollis faucibus quam pellentesque tincidunt. Donec euismod nec turpis at blandit. Vivamus luctus porttitor consequat. Phasellus eu suscipit felis. Sed ligula urna, tristique sit amet odio et, pharetra volutpat elit.</span>
+        <div className='absolute bottom-5 flex font-space'>
+            {IS_MOBILE ? <SwipeVerticalRoundedIcon /> : <MouseRoundedIcon />}
+            <span className='ml-2'>
+                {IS_MOBILE ? 'Desliza' : 'Scroll'} para ver más información.
+            </span>
         </div>
     </div>
-</article>
+</section>
 
 export default Presentation;

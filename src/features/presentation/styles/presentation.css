@@ -1,0 +1,9 @@
+@reference '@shared/styles/theme.css';
+
+.f_p_content_presentation {
+  @apply absolute top-0 flex flex-col justify-center h-full pt-20 pb-10 px-10 w-full text-white items-start;
+}
+
+.f_p_title {
+  @apply font-jet-brains mb-6 font-bold xl:text-6xl text-4xl;
+}

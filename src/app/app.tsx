@@ -1,9 +1,6 @@
-import MainLayout from "@shared/components/layout/main-layout/main-layout";
+import { Layout } from '@shared/components/layout'
 import { Content } from "@features/content";
 import '@shared/styles/theme.css'
 
-const App = () => <MainLayout>
-    <Content />
-</MainLayout>
-
+const App = () => <Layout><Content /></Layout>
 export default App;

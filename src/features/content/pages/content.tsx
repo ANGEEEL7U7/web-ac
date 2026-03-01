@@ -6,9 +6,11 @@ const PresentationLazy = lazy(() => import('@features/presentation').then(module
 
 const Content = () => {
     return <main>
-        <PresentationLazy />
         <article>
-            mas cosas
+            <PresentationLazy />
+            <section>
+                mas cosas
+            </section>
         </article>
     </main>
 }

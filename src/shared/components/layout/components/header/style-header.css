@@ -1,0 +1,18 @@
+@reference '@shared/styles/theme.css';
+
+.header[data-scrolling="true"] {
+  @apply top-3 py-3 shadow-lg rounded-2xl border border-neutral-400 dark:border-neutral-600
+ bg-white dark:bg-neutral-900/80 backdrop-blur-md md:max-w-[500px] sm:max-w-[400px] max-w-80;
+}
+.header[data-scrolling="false"] {
+  @apply top-0 py-5 bg-transparent border-transparent max-w-dvw;
+}
+.header {
+  @apply fixed z-10 transition-[width,max-width,top,padding,border-radius,box-shadow] duration-600 ease-in-out left-[50%] -translate-x-1/2
+  w-full overflow-hidden;
+}
+
+.button-icon {
+    @apply inline-flex h-10 w-10 items-center justify-center p-1 rounded-full
+    transition-all hover:bg-blue-50/50 cursor-pointer select-none;
+  }
