@@ -27,11 +27,20 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "dist",
+    minify: "terser",
+    sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ["react", "react-dom"],
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (id.includes("react")) return "vendor-app";
+            return "vendor-libs";
+          }
         },
+        entryFileNames: "assets/[hash].js",
+        chunkFileNames: "assets/[name].[hash].js",
+        assetFileNames: "assets/[name].[hash].[ext]",
       },
     },
   },

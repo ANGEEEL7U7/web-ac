@@ -1,15 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!--Css-->
+    <link rel="stylesheet" href="/public/css/style-loader.css" data-loader="true">
+    <!--Css-->  
+
+    <!--Scripts-->
+    <script src="/public/js/loader.js" data-loader="true"></script>
+    <!--Scripts-->
+
     <!--Title page-->
-    <title>Angel cab</title>
+    <title>Angel | portafolio</title>
     <!--Title page-->
 
     <!--Links-->
     <!--Icono de la pagina-->
     <link
       rel="shortcut icon"
-      href="/src/assets/images/favicon.svg"
+      href="/public/assets/images/favicon.svg"
       type="image/x-icon"
     />
     <!--Icono de la pagina-->
@@ -17,10 +25,6 @@
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
@@ -58,146 +62,6 @@
     <!-- Twitter -->
 
     <!--Meta tags-->
-
-    <!--Css-->
-    <style data-loader="true">
-      body {
-        overflow: hidden;
-      }
-      html.dark > body > #init-load,
-      body,
-      html {
-        background: #141823;
-      }
-
-      html > body > #init-load,
-      body,
-      html {
-        background: #f0f4ff;
-      }
-      #init-load {
-        padding: 0 10px;
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        color: black;
-        z-index: 1000;
-        min-height: 100svh;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .spinner {
-        width: 70.4px;
-        height: 70.4px;
-        animation: spinner-y0fdc1 2.4s infinite ease;
-        transform-style: preserve-3d;
-      }
-
-      .spinner > div {
-        background-color: rgba(71, 75, 255, 0.2);
-        height: 100%;
-        position: absolute;
-        width: 100%;
-        border: 3.5px solid #3a57f0;
-      }
-
-      .spinner div:nth-of-type(1) {
-        transform: translateZ(-35.2px) rotateY(180deg);
-      }
-
-      .spinner div:nth-of-type(2) {
-        transform: rotateY(-270deg) translateX(50%);
-        transform-origin: top right;
-      }
-
-      .spinner div:nth-of-type(3) {
-        transform: rotateY(270deg) translateX(-50%);
-        transform-origin: center left;
-      }
-
-      .spinner div:nth-of-type(4) {
-        transform: rotateX(90deg) translateY(-50%);
-        transform-origin: top center;
-      }
-
-      .spinner div:nth-of-type(5) {
-        transform: rotateX(-90deg) translateY(50%);
-        transform-origin: bottom center;
-      }
-
-      .spinner div:nth-of-type(6) {
-        transform: translateZ(35.2px);
-      }
-
-      @keyframes spinner-y0fdc1 {
-        0% {
-          transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
-        }
-
-        50% {
-          transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
-        }
-
-        100% {
-          transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
-        }
-      }
-    </style>
-    <!--Css-->
-
-    <!--Scripts-->
-    <script data-loader="true">
-      (() =>
-        document.documentElement.classList.toggle(
-          "dark",
-          window.matchMedia("(pointer: coarse)").matches,
-        ))();
-      (() => {
-        let counter = 0;
-        let load = !1;
-        const httpFetch = window.fetch;
-
-        const handLoad = () => {
-          const loader = document.getElementById("init-load");
-
-          if (counter <= 0 && load && loader) {
-            setTimeout(() => {
-              loader.setAttribute(
-                "style",
-                "transition: opacity 2s ease; opacity:0",
-              );
-              loader.addEventListener(
-                "transitionend",
-                () => {
-                  loader.remove();
-                  document
-                    .querySelectorAll('[data-loader="true"]')
-                    .forEach((element) => element.remove());
-                },
-                { once: true },
-              );
-            }, 2000);
-          }
-        };
-
-        window.fetch = function () {
-          counter++;
-          handLoad();
-          return httpFetch.apply(this, arguments).finally(() => {
-            counter--;
-            handLoad();
-          });
-        };
-
-        window.addEventListener("load", () => {
-          load = true;
-          handLoad();
-        });
-      })();
-    </script>
-    <!--Scripts-->
   </head>
 
   <body>
@@ -219,7 +83,7 @@
     </div>
 
     <div id="application"></div>
-    <script type="module" src="./src/app/main.tsx"></script>
+    <script type="module" src="./src/main.tsx"></script>
     <!--aplicacion-->
   </body>
 </html>
