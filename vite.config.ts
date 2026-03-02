@@ -34,11 +34,11 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes("node_modules")) {
-            if (id.includes("react")) return "vendor-app";
+            if (id.includes("react")) return "vendor-react";
             return "vendor-libs";
           }
         },
-        entryFileNames: "assets/[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
         chunkFileNames: "assets/[name].[hash].js",
         assetFileNames: "assets/[name].[hash].[ext]",
       },

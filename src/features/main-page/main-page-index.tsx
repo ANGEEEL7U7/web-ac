@@ -5,12 +5,10 @@ const PresentationLazy = lazy(() => import('@features/presentation').then(
 ))
 
 const MainPageIndex = (): React.ReactNode => <main>
-    <article>
-        <PresentationLazy />
-        <section>
-            mas cosas
-        </section>
-    </article>
+    <PresentationLazy />
+    <section>
+        mas cosas
+    </section>
 </main>
 
 export default MainPageIndex;

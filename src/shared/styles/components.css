@@ -15,14 +15,15 @@
   @apply inline-flex 
   cursor-pointer 
   items-center 
-  select-none 
-  border;
+  select-none
+  border
+  /*light*/
+  dark:bg-neutral-700
+  dark:border-neutral-600/75
+  /*dark*/
+  bg-neutral-200
+  border-neutral-300;
 }
 .button.icon {
-  @apply rounded-full! p-2.5! bg-transparent border-0
-  hover:bg-white/25
-  dark:hover:bg-neutral-800/30!
-  transition-all duration-300
-  active:bg-neutral-200/50
-  dark:active:bg-neutral-800/75!;
+  @apply h-10 w-10 justify-center p-1 rounded-full transition-all;
 }

@@ -1,10 +1,10 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import Footer from './components/footer/footer';
 import Header from "./components/header/header";
 
 const Layout = (
     { children }: { children: ReactNode }
-) => <div className="min-h-screen bg-body">
-        <Header /> {children} <Footer />
-    </div>
+) => <React.Fragment>
+    <Header /> {children} <Footer />
+</React.Fragment>
 export default Layout;

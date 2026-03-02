@@ -23,8 +23,9 @@
 
   const handLoad = () => {
     const loader = document.getElementById("init-load");
+    const app = document.getElementById('application');
 
-    if (counter <= 0 && load && loader) {
+    if (counter <= 0 && load && loader && app) {
       setTimeout(() => {
         loader.setAttribute("style", "transition: opacity 2s ease; opacity:0");
         loader.addEventListener(
