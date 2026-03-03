@@ -1,5 +1,4 @@
 import { Layout } from '@shared/components/'
-import '@shared/styles/theme.css'
 import { ThemeProvider } from '@shared/providers';
 import { CookiesProvider } from 'react-cookie';
 import { ReactProvider } from '@shared/utils';

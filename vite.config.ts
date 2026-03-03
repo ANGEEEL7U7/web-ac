@@ -12,10 +12,12 @@ export default defineConfig({
     createHtmlPlugin({
       minify: {
         collapseWhitespace: true,
+        keepClosingSlash: true,
+        removeComments: true,
         removeRedundantAttributes: true,
-        removeEmptyAttributes: true,
-        minifyCSS: true,
-        minifyJS: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
       },
     }),
   ],
@@ -29,17 +31,16 @@ export default defineConfig({
   build: {
     outDir: "dist",
     minify: "terser",
-    sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes("node_modules")) {
-            if (id.includes("react")) return "vendor-react";
-            return "vendor-libs";
-          }
+        strict: true,
+        manualChunks: {
+          'app': ['react', 'react-dom'],
+          'vendor-i': ['lucide-react'],
+          'vendor-three': ['three'],
         },
-        entryFileNames: "assets/[name]-[hash].js",
-        chunkFileNames: "assets/[name].[hash].js",
+        entryFileNames: "assets/lib.[hash].js",
+        chunkFileNames: "assets/[name]-chunk.[hash].js",
         assetFileNames: "assets/[name].[hash].[ext]",
       },
     },

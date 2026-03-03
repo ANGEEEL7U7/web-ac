@@ -18,10 +18,10 @@
   select-none
   border
   /*light*/
-  dark:bg-neutral-700
+  dark:bg-zinc-900
   dark:border-neutral-600/75
   /*dark*/
-  bg-neutral-200
+  bg-zinc-200
   border-neutral-300;
 }
 .button.icon {
