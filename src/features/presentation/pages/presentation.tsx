@@ -7,6 +7,7 @@ const Presentation = () => <section className='w-full h-[50em] sm:h-svh'>
     <ShaderGradientCanvas
         pointerEvents='none'
         pixelDensity={1}
+        lazyLoad={false}
         fov={45} >
         <ShaderGradient
             animate="on"

@@ -32,6 +32,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
 export const UseTheme = () => {
   const context = useContext(ThemeContext);
-  if (!context) throw new Error("theme debe usarse dentro del provider");
+  if (!context) throw new Error("Theme debe usarse dentro del provider");
   return context;
 };

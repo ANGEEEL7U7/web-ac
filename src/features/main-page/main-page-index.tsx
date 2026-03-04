@@ -1,14 +1,18 @@
+import { UseNavigatorScroll } from "@shared/providers";
 import React, { lazy } from "react";
 
 const PresentationLazy = lazy(() => import('@features/presentation').then(
     module => ({ default: module.Presentation })
 ))
 
-const MainPageIndex = (): React.ReactNode => <main>
-    <PresentationLazy />
-    <section>
-        mas cosas
-    </section>
-</main>
+const MainPageIndex = (): React.ReactNode => {
+    const { sectionsRef } = UseNavigatorScroll();
+    return <main>
+        <PresentationLazy />
+        <section ref={sectionsRef['profile']} className="h-200">
+            mas cosas
+        </section>
+    </main>;
+}
 
 export default MainPageIndex;
