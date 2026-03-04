@@ -12,6 +12,12 @@ const MainPageIndex = (): React.ReactNode => {
         <section ref={sectionsRef['profile']} className="h-200">
             mas cosas
         </section>
+        <section ref={sectionsRef['skill']} className="h-200">
+            mas cosas
+        </section>
+        <section ref={sectionsRef['trajectory']} className="h-200">
+            mas cosas
+        </section>
     </main>;
 }
 

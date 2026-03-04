@@ -27,7 +27,7 @@ export default function Header() {
             {/* contenido para pantallas pequeñas */}
             <div className="header-navigation-small">
                 <div className="header-buttons">
-                    <button className="group button-header-nav focus icon-header ">
+                    <button className="group button-header-nav focus icon-header " onClick={() => changePosition('profile')}>
                         <span className="label-icon-header stadistics">Perfil</span>
                         <User size={18} className="icon-button-header" />
                     </button>

@@ -7,9 +7,9 @@ import { MainPage } from './features';
 import { NavigatorScrollProvider } from '@shared/providers/navigator-scroll-provider';
 
 const providers: ReactProvider[] = [
+    NavigatorScrollProvider,
     CookiesProvider,
     ThemeProvider,
-    NavigatorScrollProvider,
 ];
 const App = () => <ImportProviders providers={providers}>
     <Layout><MainPage /></Layout>

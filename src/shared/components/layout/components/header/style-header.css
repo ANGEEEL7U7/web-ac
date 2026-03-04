@@ -9,7 +9,7 @@
 }
 
 .header-buttons {
-  @apply flex p-1 md:gap-2 gap-1 mr-2 lg:mr-3 dark:text-white text-black dark:bg-zinc-900 border-zinc-700 border-[1.9px] rounded-full bg-zinc-200;
+  @apply flex p-1 md:gap-2 gap-1 mr-2 lg:mr-3 dark:text-white text-black dark:bg-zinc-900 dark:border-zinc-600 border-zinc-300 border-1 rounded-full bg-zinc-100;
 }
 
 .button-header-nav {
