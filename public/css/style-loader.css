@@ -1,5 +1,7 @@
 body {
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 html.dark > body > #init-load,
 body,
@@ -13,10 +15,10 @@ html {
   background: #f0f4ff;
 }
 #init-load {
-  padding: 0 10px;
+
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   color: black;
   z-index: 1000;
   min-height: 100svh;

@@ -6,16 +6,16 @@ import { UseNavigatorScroll, UseTheme } from "@shared/providers";
 export default function Header() {
     const [scrollActivo] = ScrollBehavior();
     const { theme, changeTheme } = UseTheme();
-    const { changePosition } = UseNavigatorScroll();
+    const { sectionActive,changePosition } = UseNavigatorScroll();
 
     return <header className="header" data-scrolling={scrollActivo}>
         <nav>
             {/* contenido para pantallas grandes */}
             <div className="header-navigation">
                 <div className="header-buttons">
-                    <button className="button-header-nav" onClick={() => changePosition('profile')}>Estadistica</button>
-                    <button className="button-header-nav">Competencias</button>
-                    <button className="button-header-nav">Ediciones</button>
+                    <button className="button-header-nav" data-focus-section={sectionActive === 'profile'} onClick={() => changePosition('profile')}>Estadistica</button>
+                    <button className="button-header-nav" data-focus-section={sectionActive === 'skill'} onClick={() => changePosition('skill')}>Competencias</button>
+                    <button className="button-header-nav" data-focus-section={sectionActive === 'trajectory'} onClick={() => changePosition('trajectory')}>Ediciones</button>
                 </div>
                 <button onClick={changeTheme} className="button icon transition-all">
                     <Sun className={`inline-flex transition-transform duration-400 ${theme !== 'dark' ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'}`} />

@@ -19,8 +19,8 @@
 .header-navigation-small {
   @apply flex items-center w-full whitespace-nowrap visible md:hidden;
 }
-.button-header-nav.focus {
-  @apply focus:bg-purple-300 focus:text-black;
+.button-header-nav[data-focus-section="true"] {
+  @apply bg-purple-300! text-black!;
 }
 .icon-header {
   @apply flex items-center justify-center cursor-pointer transition-all duration-300
