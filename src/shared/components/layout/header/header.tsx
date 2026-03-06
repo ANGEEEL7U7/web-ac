@@ -27,15 +27,15 @@ export default function Header() {
             {/* contenido para pantallas pequeñas */}
             <div className="header-navigation-small">
                 <div className="header-buttons">
-                    <button className="group button-header-nav focus icon-header " onClick={() => changePosition('profile')}>
+                    <button className="group button-header-nav focus icon-header " data-focus-section={sectionActive === 'profile'} onClick={() => changePosition('profile')}>
                         <span className="label-icon-header stadistics">Perfil</span>
                         <User size={18} className="icon-button-header" />
                     </button>
-                    <button className="group button-header-nav focus icon-header ">
+                    <button className="group button-header-nav focus icon-header " data-focus-section={sectionActive === 'skill'} onClick={() => changePosition('skill')}>
                         <span className="label-icon-header competences">Habilidades</span>
                         <Braces size={18} className="icon-button-header" />
                     </button>
-                    <button className="group button-header-nav focus icon-header ">
+                    <button className="group button-header-nav focus icon-header " data-focus-section={sectionActive === 'trajectory'} onClick={() => changePosition('trajectory')}>
                         <span className="label-icon-header education">Trayectoria</span>
                         <Star size={18} className="icon-button-header" />
                     </button>

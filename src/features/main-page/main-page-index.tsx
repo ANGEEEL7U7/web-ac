@@ -10,13 +10,13 @@ const MainPageIndex = (): React.ReactNode => {
     return <main>
         <PresentationLazy />
         <section ref={sectionsRef['profile']} className="h-200">
-            mas cosas
+            mas cosas pp
         </section>
         <section ref={sectionsRef['skill']} className="h-200">
-            mas cosas
+            mas cosas ssss
         </section>
         <section ref={sectionsRef['trajectory']} className="h-200">
-            mas cosas
+            mas cosas ttt
         </section>
     </main>;
 }

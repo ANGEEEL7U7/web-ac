@@ -1,4 +1,7 @@
 import React, { createContext, useContext, useEffect, useRef, useState } from "react";
+
+const listSections: string[] = import.meta.env.VITE_LIST_SECTIONS.split(',');
+
 interface SectionRef {
     [key: string]: React.RefObject<HTMLElement | null>
 }
@@ -11,13 +14,11 @@ interface NavigatorScrollProps { children: React.ReactNode };
 const NavigatorScrollContext = createContext<NavigatorScrollContextProps | null>(null);
 
 export const NavigatorScrollProvider = ({ children }: NavigatorScrollProps) => {
-    const [sectionActive,setSectionActive] = useState<string | null>(null);
+    const [sectionActive, setSectionActive] = useState<string | null>(null);
 
-    const sectionsRef: SectionRef = {
-        profile: useRef(null),
-        skill: useRef(null),
-        trajectory: useRef(null)
-    }
+    const sectionsRef: SectionRef = Object.fromEntries(
+        listSections.map(i => [i, useRef(null)])
+    )
     const changePosition = (name: string): void => {
         const ref = sectionsRef[name];
         if (!ref || !ref.current) return;
@@ -26,13 +27,13 @@ export const NavigatorScrollProvider = ({ children }: NavigatorScrollProps) => {
         window.history.pushState(null, '', `/${name}`);
     }
     const handlePositionSection = () => {
-       const positionPath = window.location.pathname.split('/')[1];
-       if(!positionPath) return;
-       changePosition(positionPath);
+        const positionPath = window.location.pathname.split('/')[1];
+        if (!positionPath) return;
+        changePosition(positionPath);
     }
 
     useEffect(handlePositionSection, [])
-    return <NavigatorScrollContext.Provider value={{ sectionsRef,sectionActive, changePosition }}>
+    return <NavigatorScrollContext.Provider value={{ sectionsRef, sectionActive, changePosition }}>
         {children}
     </NavigatorScrollContext.Provider>
 }
