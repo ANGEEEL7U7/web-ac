@@ -1,1 +1,1 @@
-export { default as Presentation } from "./pages/presentation";
+export { default as Presentation } from "./pages/Presentation";

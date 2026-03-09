@@ -1,5 +1,6 @@
-export { ThemeProvider, UseTheme } from "@shared/providers/theme-provider";
+export { DarkModeProvider, UseTheme } from "./DarkModeProvider";
 export {
   NavigatorScrollProvider,
   UseNavigatorScroll,
-} from "@shared/providers/navigator-scroll-provider";
+} from "./NavigatorScrollProvider";
+export { AppProvider, type ReactProvider } from "./AppProvider";

@@ -1,17 +1,17 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { IS_DARK } from "@shared/utils/const";
+import { IS_DARK } from "@shared/utils/contants.utils";
 import { useCookies } from 'react-cookie';
 
 export type ThemeMode = "light" | "dark";
-export interface ThemeContextProps {
+export interface DarkModeContext {
   theme: ThemeMode;
   changeTheme: () => void;
 }
-interface ThemeProviderProps { children: React.ReactNode }
+interface DarkModeProps { children: React.ReactNode }
 
-const ThemeContext = createContext<ThemeContextProps | null>(null);
+const DarkModeContext = createContext<DarkModeContext | null>(null);
 
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+export const DarkModeProvider = ({ children }: DarkModeProps) => {
   const [cookies, setCookie] = useCookies();
   const [theme, setTheme] = useState<ThemeMode>(
     cookies['mode'] ? cookies['mode'] : IS_DARK ? 'dark' : 'light'
@@ -25,13 +25,14 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const changeTheme = () =>
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
-  return <ThemeContext.Provider value={{ theme, changeTheme }}>
+  return <DarkModeContext.Provider value={{ theme, changeTheme }}>
     {children}
-  </ThemeContext.Provider>;
+  </DarkModeContext.Provider>;
 };
+DarkModeProvider.displayName = 'DarkModeProvider';
 
 export const UseTheme = () => {
-  const context = useContext(ThemeContext);
+  const context = useContext(DarkModeContext);
   if (!context) throw new Error("Theme debe usarse dentro del provider");
   return context;
 };

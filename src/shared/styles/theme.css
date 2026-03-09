@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *, [data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 @theme {
   --color-body: #faf8ff;
 
-  /*primary color*/
+ 
   --color-primary-50: #f0f4fd;
   --color-primary-100: #e5ebfa;
   --color-primary-200: #cfdbf6;
@@ -17,9 +18,7 @@
   --color-primary-800: #414492;
   --color-primary-900: #3a3e75;
   --color-primary-950: #1d1e3a;
-  /*primary color*/
-
-  /*fonts*/
+ 
   --font-space: "Space Mono", monospace;
   --font-jet-brains: "JetBrains Mono", monospace;
 }

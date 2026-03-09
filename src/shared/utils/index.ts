@@ -1,2 +1,1 @@
-export type { ReactProvider } from "./imports-providers";
-export { IS_DARK, IS_MOBILE } from "./const";
+export { IS_DARK, IS_MOBILE, BreakPoints } from "./contants.utils";

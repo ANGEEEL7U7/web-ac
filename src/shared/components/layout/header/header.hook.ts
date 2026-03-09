@@ -1,24 +1,16 @@
 import { useEffect, useState } from "react";
+import { BreakPoints } from "@shared/utils";
 
-export const ScrollBehavior = (): [boolean] => {
-  const [scrollActive, setScrollActive] = useState<boolean>(window.scrollY > 0);
+export const IsSmallScreen = (): boolean => {
+  const [size, setSize] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollActive(window.scrollY > 0);
-    };
+    const handleSize = () => setSize(window.innerWidth < BreakPoints.sm);
+    window.addEventListener("resize", handleSize);
 
-    window.addEventListener("scroll", handleScroll);
+    handleSize();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("resize", handleSize);
   }, []);
-
-  return [scrollActive];
-};
-
-export const ActionMenu = (): [boolean, () => void] => {
-  const [menuActive, setMenuStatus] = useState<boolean>(false);
-
-  const toggleMenu = () => setMenuStatus(!menuActive);
-  return [menuActive, toggleMenu];
+  return size;
 };

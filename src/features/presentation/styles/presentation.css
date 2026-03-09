@@ -1,9 +1,17 @@
 @reference '@shared/styles/theme.css';
 
-.f_p_content_presentation {
-  @apply absolute top-0 flex flex-col justify-center h-full pt-20 pb-10 px-10 w-full text-white items-start w-fit;
+.f-screen-section {
+  @apply relative flex h-svh p-2 w-full;
 }
-
-.f_p_title {
-  @apply font-jet-brains mb-6 font-bold xl:text-6xl text-4xl;
+.f-wallpaper {
+  @apply rounded-2xl w-full h-full;
+}
+.f-content-section {
+  @apply absolute inset-0 py-4 px-10 flex flex-col;
+}
+.f-content-section_title {
+  @apply mt-auto md:text-5xl sm:text-2xl text-2xl font-bold font-jet-brains
+}
+.f-content-section_scroll_text {
+  @apply mt-auto flex items-center mb-3
 }

@@ -1,50 +1,16 @@
-import { ScrollBehavior } from "./header.hook";
-import { Braces, Moon, Star, Sun, User } from 'lucide-react';
-import './style-header.css'
-import { UseNavigatorScroll, UseTheme } from "@shared/providers";
+import { IsSmallScreen } from "./header.hook";
+import './header.style.css'
+import HeaderButtonsNavigator from "./components/HeaderButtonsNavigator";
+import HeaderIconsNavigator from "./components/HeaderIconsNavigator";
+
 
 export default function Header() {
-    const [scrollActivo] = ScrollBehavior();
-    const { theme, changeTheme } = UseTheme();
-    const { sectionActive,changePosition } = UseNavigatorScroll();
+    //si es true muestra un elemento si no muestra el otro
+    const isSmall = IsSmallScreen();
 
-    return <header className="header" data-scrolling={scrollActivo}>
+    return <header className="header">
         <nav>
-            {/* contenido para pantallas grandes */}
-            <div className="header-navigation">
-                <div className="header-buttons">
-                    <button className="button-header-nav" data-focus-section={sectionActive === 'profile'} onClick={() => changePosition('profile')}>Estadistica</button>
-                    <button className="button-header-nav" data-focus-section={sectionActive === 'skill'} onClick={() => changePosition('skill')}>Competencias</button>
-                    <button className="button-header-nav" data-focus-section={sectionActive === 'trajectory'} onClick={() => changePosition('trajectory')}>Ediciones</button>
-                </div>
-                <button onClick={changeTheme} className="button icon transition-all">
-                    <Sun className={`inline-flex transition-transform duration-400 ${theme !== 'dark' ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'}`} />
-                    <Moon className={`absolute inline-flex transition-transform duration-400 ${theme !== 'light' ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'}`} />
-                </button>
-            </div>
-            {/* contenido para pantallas grandes */}
-
-            {/* contenido para pantallas pequeñas */}
-            <div className="header-navigation-small">
-                <div className="header-buttons">
-                    <button className="group button-header-nav focus icon-header " data-focus-section={sectionActive === 'profile'} onClick={() => changePosition('profile')}>
-                        <span className="label-icon-header stadistics">Perfil</span>
-                        <User size={18} className="icon-button-header" />
-                    </button>
-                    <button className="group button-header-nav focus icon-header " data-focus-section={sectionActive === 'skill'} onClick={() => changePosition('skill')}>
-                        <span className="label-icon-header competences">Habilidades</span>
-                        <Braces size={18} className="icon-button-header" />
-                    </button>
-                    <button className="group button-header-nav focus icon-header " data-focus-section={sectionActive === 'trajectory'} onClick={() => changePosition('trajectory')}>
-                        <span className="label-icon-header education">Trayectoria</span>
-                        <Star size={18} className="icon-button-header" />
-                    </button>
-                </div>
-                <button onClick={changeTheme} className="button icon transition-all">
-                    <Sun className={`inline-flex transition-transform duration-400 ${theme !== 'dark' ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'}`} />
-                    <Moon className={`absolute inline-flex transition-transform duration-400 ${theme !== 'light' ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'}`} />
-                </button>
-            </div>
+            {!isSmall ? <HeaderButtonsNavigator /> : <HeaderIconsNavigator />}
         </nav>
     </header>
 }

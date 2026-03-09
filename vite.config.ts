@@ -18,6 +18,8 @@ export default defineConfig({
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
+        minifyCSS: true,
+        minifyJS: true,
       },
     }),
   ],
@@ -35,9 +37,19 @@ export default defineConfig({
       output: {
         strict: true,
         manualChunks: {
-          'app': ['react', 'react-dom'],
-          'vendor-i': ['lucide-react'],
-          'vendor-three': ['three'],
+          // aplicacion
+          "vendor-react": ["react", "react-dom", "react-cookie"],
+
+          // graficos
+          "vendor-three": ["three"],
+
+          // diseño y estilos
+          "vendor-ui": [
+            "@headlessui/react",
+            "lucide-react",
+            "@emotion/react",
+            "@emotion/styled",
+          ],
         },
         entryFileNames: "assets/lib.[hash].js",
         chunkFileNames: "assets/[name]-chunk.[hash].js",
