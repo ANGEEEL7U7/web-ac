@@ -24,12 +24,7 @@ export const NavigatorScrollProvider = ({ children }: NavigatorScrollProps) => {
 
     useEffect(() => {
         const location = window.location.pathname.split('/')[1];
-        if (location) {
-            setActiveObserver(location);
-            const element = document.querySelector(`[data-item-scrolling="${location}"]`)
-            if (!element) return;
-            element.scrollIntoView({ behavior: 'smooth' })
-        }
+        if (location) changePosition(location);
 
         observerRef.current = new IntersectionObserver((entries) => {
             if (isManualScroll.current) return;
