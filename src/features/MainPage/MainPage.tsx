@@ -8,8 +8,9 @@ const Presentation = React.lazy(() => import('@features/presentation').then(
 
 const MainPage = (): React.ReactNode => {
     return <Layout>
-        <main>
-            <Presentation />
+        <main className="min-h-svh">
+            oa
+            {/*<Presentation />
             <section data-item-scrolling="profile" className="h-200">
                 mas cosas pp
             </section>
@@ -18,7 +19,7 @@ const MainPage = (): React.ReactNode => {
             </section>
             <section data-item-scrolling="trajectory" className="h-200">
                 mas cosas ttt
-            </section>
+            </section>  */}
         </main>
     </Layout>;
 }

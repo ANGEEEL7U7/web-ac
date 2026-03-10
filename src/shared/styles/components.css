@@ -25,5 +25,5 @@
   border-neutral-300;
 }
 .button.icon {
-  @apply h-10 w-10 justify-center p-1 rounded-full transition-all;
+  @apply h-10 w-10 justify-center p-1 rounded-full transition-all text-content;
 }
