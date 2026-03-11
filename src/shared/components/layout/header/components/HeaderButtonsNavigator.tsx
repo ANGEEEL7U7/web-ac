@@ -9,7 +9,8 @@ export default function HeaderButtonsNavigator() {
         <div className="header-navigation">
             <div className="header-buttons">
                 <button
-                    className="button-header-nav"
+                    className="button text"
+                    data-animation="on"
                     data-focus-section={position === 'profile'}
                     onClick={() => { changePosition('profile') }}>Perfiles</button>
                 <button
