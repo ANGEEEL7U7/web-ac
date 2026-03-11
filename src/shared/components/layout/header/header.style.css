@@ -34,7 +34,7 @@
 }
 
 .group[data-focus-section="true"] .label-icon-header.stadistics {
-  @apply w-[45px] mr-1;
+  @apply w-[45px]! mr-1;
 }
 .group[data-focus-section="true"] .label-icon-header.competences {
   @apply w-[85px] mr-1;

@@ -9,17 +9,19 @@ export default function HeaderButtonsNavigator() {
         <div className="header-navigation">
             <div className="header-buttons">
                 <button
-                    className="button text"
+                    className="button"
                     data-animation="on"
-                    data-focus-section={position === 'profile'}
+                    data-color={position === 'profile' ? 'primary':''}
                     onClick={() => { changePosition('profile') }}>Perfiles</button>
                 <button
-                    className="button-header-nav"
-                    data-focus-section={position === 'skill'}
+                    className="button"
+                    data-animation="on"
+                    data-color={position === 'skill' ? 'primary':''}
                     onClick={() => changePosition('skill')}>Competencias</button>
                 <button
-                    className="button-header-nav"
-                    data-focus-section={position === 'trajectory'}
+                    className="button"
+                    data-animation="on"
+                    data-color={position === 'trajectory' ? 'primary':''}
                     onClick={() => changePosition('trajectory')}>Ediciones</button>
             </div>
             <ButtonIconTheme />

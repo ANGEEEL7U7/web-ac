@@ -1,55 +1,67 @@
-.button-outline {
-  @apply cursor-pointer 
-  select-none 
-  inline-flex 
-  items-center 
-  justify-center 
-  border 
-  px-[1em] 
-  rounded-full 
-  transition-all
-  hover:bg-neutral-200/20
-  active:bg-neutral-200/40;
-}
-
 @layer components {
   .button {
-    @apply inline-flex 
-    cursor-pointer 
-    items-center 
-    rounded-full
-    select-none
-    px-3
-    bg-zinc-100;
+    display: inline-flex;
+    cursor: pointer;
+    align-items: center;
+    @apply rounded-full select-none px-3 py-2 bg-zinc-100;
 
     @variant dark {
       @apply bg-zinc-900;
-      &:hover {
-        @apply bg-zinc-600/50;
-      }
     }
-    &:hover:not(:active) {
-      @apply bg-sky-400/20;
-    }
+
     &[data-animation="on"] {
       @apply transition-all duration-300;
     }
 
-    &.text {
-      &:active {
-        @apply bg-sky-400;
-        @variant dark {
-          @apply bg-sky-200 text-black;
-        }
+    &:hover:not(:active):not([data-color]) {
+      @apply bg-zinc-200;
+
+      @variant dark {
+        @apply bg-zinc-700;
       }
     }
-    &.icon {
-      @apply h-10 w-10 justify-center p-1 rounded-full text-content;
+    &:active:not([data-color]) {
+      @apply bg-zinc-300;
+      @variant dark {
+        @apply bg-zinc-600;
+      }
     }
+
+    &.icon {
+      justify-content: center;
+      @apply h-10 w-10 p-1 rounded-full text-content truncate;
+    }
+
     &.outlined {
       @apply border border-neutral-300;
+
       @variant dark {
         @apply border-neutral-600/75;
+      }
+    }
+
+    &[data-color="primary"] {
+      color: black;
+      @apply bg-primary-200;
+
+      &:hover:not(:active) {
+        @apply bg-primary-300
+      }
+    }
+    &[data-color="secondary"] {
+      color: black;
+      @apply bg-secondary-200;
+
+      &:hover:not(:active) {
+        @apply bg-secondary-300
+      }
+    }
+    &[data-color="accent"] {
+      color: black;
+      @apply bg-accent-200;
+
+      &:hover:not(:active) {
+        @apply bg-accent-300
       }
     }
   }

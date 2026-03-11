@@ -9,10 +9,8 @@ export default function Layout({ children }: { children: ReactNode }) {
     return <React.Fragment>
         <Header /> {children} <Footer />
         <button
-            className={`
-                fixed bottom-5 right-5 button icon transition duration-300 
-                ${position > 300 ? 'opacity-100' : 'opacity-0 pointer-events-none'}
-            `}
+            className={`fixed bottom-5 right-5 button icon outlined ${position > 300 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            data-animation="on"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <ChevronUp />
         </button>
