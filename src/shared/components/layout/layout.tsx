@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import Footer from './footer/footer';
-import Header from './header/header';
+import Header from './header/Header';
 import { ChevronUp } from "lucide-react";
 import { ScrollBehavior } from "@shared/hooks";
 
