@@ -5,19 +5,19 @@ export default function HeaderButtonsNavigator() {
 
     return <div className="header-buttons">
         <button
-            className="button"
+            className={`button text${position === 'profile' ? ' active' : ''}`}
             data-animation="on"
-            data-color={position === 'profile' ? 'primary' : ''}
+            data-color="primary"
             onClick={() => { changePosition('profile') }}>Perfiles</button>
         <button
-            className="button"
+            className={`button text${position === 'skill' ? ' active' : ''}`}
             data-animation="on"
-            data-color={position === 'skill' ? 'primary' : ''}
+            data-color="primary"
             onClick={() => changePosition('skill')}>Competencias</button>
         <button
-            className="button"
+            className={`button text${position === 'trajectory' ? ' active' : ''}`}
             data-animation="on"
-            data-color={position === 'trajectory' ? 'primary' : ''}
+            data-color="primary"
             onClick={() => changePosition('trajectory')}>Ediciones</button>
     </div>;
 }

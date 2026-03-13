@@ -40,14 +40,14 @@
   margin-right: 6px;
 
   &.stadistics {
-    width: 45px !important;
+    width: 47px !important;
   }
 
   &.competences {
-    width: 85px !important;
+    width: 92px !important;
   }
 
   &.education {
-    width: 80px !important;
+    width: 90px !important;
   }
 }

@@ -5,17 +5,7 @@
     align-items: center;
     @apply rounded-full select-none px-3 py-2 bg-zinc-100 dark:bg-zinc-900;
 
-    &[data-animation="on"] {
-      @apply transition-all duration-300;
-    }
-
-    &:hover:is(:not([data-color]), [data-color=""]):not(:active) {
-      @apply bg-zinc-200 dark:bg-zinc-800;
-    }
-    &:is(:not([data-color]), [data-color=""]):active {
-      @apply bg-zinc-300 dark:bg-zinc-600;
-    }
-
+    /*Tipos de botones*/
     &.icon {
       justify-content: center;
       color: var(--color-content);
@@ -33,12 +23,44 @@
       }
     }
 
-    &[data-color="primary"] {
+    /*Activar animacion*/
+    &[data-animation="on"] {
+      @apply transition-all duration-300;
+    }
+
+    /*Efecto hover*/
+    &:hover:is(:not([data-color]), [data-color=""]):not(:active) {
+      @apply bg-zinc-200 dark:bg-zinc-700;
+    }
+    &:is(:not([data-color]), [data-color=""]):active {
+      @apply bg-zinc-300/75 dark:bg-zinc-600;
+    }
+
+    /*Colores*/
+    &:is(.active)[data-color="primary"] {
+     color: black;
+      @apply bg-primary-300;
+      &:hover:not(:active) {
+        @apply bg-primary-200
+      }
+    }
+
+    /*&[data-color="secondary"] {
       color: black;
-      @apply bg-purple-300;
+      @apply bg-secondary-400;
+      &:hover:not(:active) {
+        @apply bg-secondary-300;
+      }
+    }*/
+
+    /**/
+
+    /*&[data-color="primary"] {
+      color: black;
+      @apply bg-primary-300;
 
       &:hover:not(:active) {
-        @apply bg-purple-400;
+        @apply bg-blue-300;
       }
     }
     &[data-color="secondary"] {
@@ -56,6 +78,6 @@
       &:hover:not(:active) {
         @apply bg-amber-300;
       }
-    }
+    }*/
   }
 }
